@@ -159,6 +159,14 @@ vim.opt.scrolloff = 10
 
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
+--
+-- Personal hotkeys
+vim.keymap.set('i', 'jk', '<Esc>')
+vim.keymap.set('n', '<leader>fw', '<cmd>:w<CR>')
+vim.keymap.set('n', '<leader>fwq', '<cmd>:wq<CR>')
+vim.keymap.set('n', '<leader>fq', '<cmd>:q<CR>')
+vim.keymap.set('n', '<leader>fqq', '<cmd>:q!<CR>')
+vim.keymap.set('n', '<leader>fe', '<cmd>:Ex<CR>')
 
 -- Clear highlights on search when pressing <Esc> in normal mode
 --  See `:help hlsearch`
@@ -394,18 +402,6 @@ require('lazy').setup({
           },
         },
       }
-
-      require('oil').setup()
-
-      --vim.keymap.set('n', '-', '<CMD>Oil<CR>', { desc = 'Open parent directory' })
-
-      -- Personal hotkeys
-      vim.keymap.set('i', 'jk', '<Esc>')
-      vim.keymap.set('n', '<leader>fw', '<cmd>:w<CR>')
-      vim.keymap.set('n', '<leader>fwq', '<cmd>:wq<CR>')
-      vim.keymap.set('n', '<leader>fq', '<cmd>:q<CR>')
-      vim.keymap.set('n', '<leader>fqq', '<cmd>:q!<CR>')
-      vim.keymap.set('n', '<leader>fe', '<cmd>:Ex<CR>')
 
       -- Enable Telescope extensions if they are installed
       pcall(require('telescope').load_extension, 'fzf')
